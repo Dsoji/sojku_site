@@ -34,7 +34,7 @@ export default function HeroSection() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 mb-16 animate-fade-in-up opacity-0 delay-500">
+          <div className="flex flex-wrap gap-4 animate-fade-in-up opacity-0 delay-500">
             <a
               href="#portfolio"
               className="group relative overflow-hidden bg-gradient-to-r from-accent to-cyber text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 hover:scale-105"
@@ -48,21 +48,6 @@ export default function HeroSection() {
               Start a Project
               <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </a>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in-up opacity-0 delay-600">
-            {[
-              { value: '50+', label: 'Projects' },
-              { value: '20+', label: 'Clients' },
-              { value: '5+', label: 'Years' },
-              { value: '99%', label: 'Satisfaction' },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">{stat.value}</div>
-                <div className="text-dark-500 text-sm uppercase tracking-wider">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

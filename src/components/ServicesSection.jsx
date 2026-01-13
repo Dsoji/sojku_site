@@ -46,6 +46,21 @@ export default function ServicesSection() {
       ]
     },
     {
+      title: '3D & 2D',
+      subtitle: 'Design & Animation',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+        </svg>
+      ),
+      items: [
+        '3D Modeling & Rendering',
+        '2D Illustrations',
+        'Motion Graphics',
+        'Product Visualization'
+      ]
+    },
+    {
       title: 'Product',
       subtitle: 'Design',
       icon: (
@@ -77,7 +92,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
