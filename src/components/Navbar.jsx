@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import logo from '../assets/IMG_5733.JPG'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,8 +18,8 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent to-cyber flex items-center justify-center animate-pulse-glow">
-              <span className="text-white font-bold text-lg">S</span>
+            <div className="w-10 h-10 rounded-xl overflow-hidden">
+              <img src={logo} alt="Sojku Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-xl font-bold text-white group-hover:text-accent transition-colors duration-300">
               Sojku
