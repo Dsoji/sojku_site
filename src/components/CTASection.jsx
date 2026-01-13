@@ -104,22 +104,11 @@ export default function CTASection() {
                 </span>
               </div>
             </div>
-
-            {/* Social links temporarily removed */}
           </div>
 
           {/* Contact form */}
           <div className="card-glow p-8">
-<<<<<<< HEAD
             <form onSubmit={handleSubmit} className="space-y-6">
-=======
-            <form
-              className="space-y-6"
-              action="mailto:o.sojku@gmail.com"
-              method="POST"
-              encType="text/plain"
-            >
->>>>>>> 7baa794628dc0335d60fd2b63208873363e637b6
               <div>
                 <label className="block text-dark-400 text-sm mb-2 font-medium">Name</label>
                 <input
