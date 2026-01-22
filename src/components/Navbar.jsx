@@ -13,7 +13,7 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-dark-950/80 backdrop-blur-xl border-b border-dark-800/50">
+    <nav className="fixed top-0 w-full z-50 bg-transparent">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -25,7 +25,7 @@ export default function Navbar() {
               Sojku
             </span>
           </a>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link, index) => (
