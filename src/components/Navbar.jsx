@@ -23,9 +23,10 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-8 w-full z-50 px-6">
-      <div className={`max-w-4xl mx-auto rounded-full transition-all duration-500 border border-white/5 ${isScrolled
-        ? 'bg-gradient-to-r from-black/80 via-[#0a0514]/90 to-black/80 backdrop-blur-xl shadow-2xl shadow-black/50 py-3'
-        : 'bg-transparent py-4'
+      <div className={`max-w-4xl mx-auto transition-all duration-500 border border-white/5 ${isMenuOpen ? 'rounded-[2.5rem]' : 'rounded-full'
+        } ${isScrolled || isMenuOpen
+          ? 'bg-gradient-to-r from-black/80 via-[#0a0514]/90 to-black/80 backdrop-blur-xl shadow-2xl shadow-black/50 py-3'
+          : 'bg-transparent py-4'
         }`}>
         <div className="flex justify-between items-center px-8">
           {/* Logo */}
