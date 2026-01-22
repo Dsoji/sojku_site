@@ -85,12 +85,12 @@ export default function PortfolioSection() {
         </div>
 
         {/* CardSwap */}
-        <div className="relative h-[850px] sm:h-[750px] md:h-[600px]">
+        <div className="relative h-[850px] sm:h-[750px] md:h-[600px] mb-20 md:mb-16">
           <CardSwap
             cardDistance={isMobile ? 15 : 60}
             verticalDistance={isMobile ? 30 : 70}
             delay={5000}
-            pauseOnHover={false}
+            pauseOnHover={true}
           >
             {projects.map((project) => (
               <Card key={project.number}>
@@ -118,8 +118,8 @@ export default function PortfolioSection() {
                         <div className="flex items-center gap-4">
                           {/* Status badge */}
                           <span className={`text-[10px] sm:text-xs font-medium px-2 py-1 sm:px-3 sm:py-1.5 rounded-full backdrop-blur-sm ${project.status === 'completed'
-                              ? 'bg-green-500/10 text-green-400 border border-green-500/30'
-                              : 'bg-amber-500/10 text-amber-400 border border-amber-500/30'
+                            ? 'bg-green-500/10 text-green-400 border border-green-500/30'
+                            : 'bg-amber-500/10 text-amber-400 border border-amber-500/30'
                             }`}>
                             {project.status === 'completed' ? 'Completed' : 'Coming Soon'}
                           </span>

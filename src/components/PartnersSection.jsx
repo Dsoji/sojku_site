@@ -5,7 +5,7 @@ export default function PartnersSection() {
     <section id="partners" className="section-padding relative">
       {/* Background grid */}
       <div className="absolute inset-0 grid-bg opacity-30"></div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section header */}
         <div className="mb-16">
@@ -25,19 +25,19 @@ export default function PartnersSection() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Logo */}
             <div className="w-28 h-28 rounded-2xl overflow-hidden flex-shrink-0 bg-white p-3 group-hover:scale-105 transition-transform duration-300">
-              <img 
-                src={opensauceryLogo} 
-                alt="OpenSaucery Logo" 
+              <img
+                src={opensauceryLogo}
+                alt="OpenSaucery Logo"
                 className="w-full h-full object-contain"
               />
             </div>
-            
+
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-accent transition-colors duration-300">
-                OpenSaucery
+                Opensaucery
               </h3>
               <p className="text-dark-400 mb-4 max-w-md group-hover:text-dark-300 transition-colors duration-300">
-                We partner with OpenSaucery, a pioneering African engineering company, 
+                We partner with Opensaucery, a pioneering African engineering company,
                 to build innovative products and digital solutions that drive growth across the continent.
               </p>
               <div className="flex items-center justify-center md:justify-start gap-2 text-accent group-hover:gap-4 transition-all duration-300">
