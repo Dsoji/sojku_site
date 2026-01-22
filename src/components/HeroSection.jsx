@@ -1,13 +1,33 @@
+import DecryptedText from './DecryptedText'
+import LiquidEther from './LiquidEther'
+
 export default function HeroSection() {
   return (
     <section id="about" className="min-h-screen flex items-center section-padding pt-32 relative overflow-hidden">
+      {/* LiquidEther Background */}
+      <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0 }}>
+        <LiquidEther
+          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+          mouseForce={20}
+          cursorSize={100}
+          isViscous={false}
+          viscous={30}
+          iterationsViscous={32}
+          iterationsPoisson={32}
+          resolution={0.5}
+          isBounce={false}
+          autoDemo
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          takeoverDuration={0.25}
+          autoResumeDelay={1000}
+          autoRampDuration={0.6}
+        />
+      </div>
+
       {/* Background grid */}
-      <div className="absolute inset-0 grid-bg opacity-50"></div>
-      
-      {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-cyber/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
-      
+      <div className="absolute inset-0 grid-bg opacity-50" style={{ zIndex: 1 }}></div>
+
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="max-w-4xl">
           {/* Tagline */}
@@ -20,17 +40,56 @@ export default function HeroSection() {
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-8">
-            <span className="block text-white animate-fade-in-up opacity-0 delay-100">We are</span>
-            <span className="block gradient-text animate-fade-in-up opacity-0 delay-200">Sojku</span>
+            <span className="block text-white animate-fade-in-up opacity-0 delay-100">
+              <DecryptedText
+                text="We are"
+                speed={50}
+                maxIterations={20}
+                animateOn="view"
+                revealDirection="start"
+                sequential
+                useOriginalCharsOnly={false}
+                className="revealed"
+              />
+            </span>
+            <span className="block gradient-text animate-fade-in-up opacity-0 delay-200">
+              <DecryptedText
+                text="Sojku"
+                speed={65}
+                maxIterations={20}
+                animateOn="view"
+                revealDirection="start"
+                sequential
+                useOriginalCharsOnly={false}
+                className="revealed"
+              />
+            </span>
             <span className="block text-dark-400 text-4xl md:text-5xl lg:text-6xl mt-4 animate-fade-in-up opacity-0 delay-300">
-              Engineering Company.
+              <DecryptedText
+                text="Engineering Company."
+                speed={70}
+                maxIterations={20}
+                animateOn="view"
+                revealDirection="start"
+                sequential
+                useOriginalCharsOnly={false}
+                className="revealed"
+              />
             </span>
           </h1>
 
           {/* Description */}
           <p className="text-xl md:text-2xl text-dark-400 leading-relaxed max-w-2xl mb-12 animate-fade-in-up opacity-0 delay-400">
-            A pioneering software engineering company building innovative mobile apps, 
-            websites, and AI solutions that create sustainable impact across Africa.
+            <DecryptedText
+              text="A pioneering software engineering company building innovative mobile apps, websites, and AI solutions that create sustainable impact across Africa."
+              speed={75}
+              maxIterations={15}
+              animateOn="view"
+              revealDirection="start"
+              sequential
+              useOriginalCharsOnly={false}
+              className="revealed"
+            />
           </p>
 
           {/* CTA Buttons */}
