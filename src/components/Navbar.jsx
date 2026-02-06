@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '../assets/IMG_5733.JPG'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,16 +15,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const isHomePage = location.pathname === '/'
+
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Projects', href: '#portfolio' },
-    { name: 'Reviews', href: '#reviews' },
+    { name: 'Home', href: isHomePage ? '#' : '/' },
+    { name: 'About', href: isHomePage ? '#about' : '/#about' },
+    { name: 'Services', href: isHomePage ? '#services' : '/#services' },
+    { name: 'Projects', href: isHomePage ? '#portfolio' : '/#portfolio' },
+    { name: 'Reviews', href: isHomePage ? '#reviews' : '/#reviews' },
   ]
 
   return (
-    <nav className="fixed top-8 w-full z-50 px-6">
+    <nav className="fixed top-8 w-full z-50 px-6 text-dark-100">
       <div className={`max-w-4xl mx-auto transition-all duration-500 border border-white/5 ${isMenuOpen ? 'rounded-[2.5rem]' : 'rounded-full'
         } ${isScrolled || isMenuOpen
           ? 'bg-gradient-to-r from-black/80 via-[#0a0514]/90 to-black/80 backdrop-blur-xl shadow-2xl shadow-black/50 py-3'
@@ -30,14 +34,14 @@ export default function Navbar() {
         }`}>
         <div className="flex justify-between items-center px-8">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 group-hover:border-accent/50 transition-colors">
               <img src={logo} alt="Sojku Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-lg font-bold text-white group-hover:text-accent transition-colors duration-300">
               Sojku
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10">
