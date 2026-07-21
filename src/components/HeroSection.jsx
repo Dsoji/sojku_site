@@ -1,118 +1,83 @@
-import DecryptedText from './DecryptedText'
-import LiquidEther from './LiquidEther'
+import DeveloperScene from './DeveloperScene'
+
+const display = "'Bricolage Grotesque', sans-serif"
+
+const stats = [
+  { n: '30+', label: 'Products shipped' },
+  { n: '5★', label: 'Average client rating' },
+  { n: '5', label: 'Core services' },
+]
 
 export default function HeroSection() {
   return (
-    <section id="about" className="min-h-screen flex items-center section-padding pt-32 relative overflow-hidden">
-      {/* LiquidEther Background */}
-      <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0 }}>
-        <LiquidEther
-          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
-          mouseForce={20}
-          cursorSize={100}
-          isViscous={false}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo
-          autoSpeed={0.5}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={1000}
-          autoRampDuration={0.6}
-        />
+    <section id="top" className="mx-auto" style={{ maxWidth: 1360, padding: '70px clamp(20px,5vw,40px) 60px' }}>
+      {/* eyebrow */}
+      <div
+        className="flex items-center"
+        style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', color: '#9b96a6', marginBottom: 26, gap: 12 }}
+      >
+        <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#a06bff', display: 'inline-block' }} />
+        A software studio — est. Lagos, building worldwide
       </div>
 
-      {/* Background grid */}
-      <div className="absolute inset-0 grid-bg opacity-50" style={{ zIndex: 1 }}></div>
+      {/* headline */}
+      <h1
+        style={{
+          margin: 0, fontFamily: display, fontWeight: 800,
+          fontSize: 'clamp(64px,12vw,178px)', lineHeight: 0.84,
+          letterSpacing: '-0.045em', textTransform: 'uppercase',
+        }}
+      >
+        Design.<br />Build.<br />
+        <span style={{ WebkitTextStroke: '2.5px #ece8f0', WebkitTextFillColor: '#141117' }}>Ship</span>{' '}
+        <span style={{ background: '#a06bff', color: '#17131f', padding: '0 18px', display: 'inline-block', transform: 'rotate(-2deg)' }}>fast.</span>
+      </h1>
 
-      <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="max-w-4xl">
-          {/* Tagline */}
-          <div className="animate-fade-in-up opacity-0 mb-6">
-            <span className="inline-block px-4 py-2 rounded-full bg-dark-800/80 border border-dark-700 text-dark-300 text-sm font-medium backdrop-blur-sm">
-              <span className="inline-block w-2 h-2 rounded-full bg-accent mr-2 animate-pulse"></span>
-              Welcome to the future
-            </span>
-          </div>
-
-          {/* Main heading */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-8">
-            <span className="block text-white animate-fade-in-up opacity-0 delay-100">
-              <DecryptedText
-                text="We are"
-                speed={50}
-                maxIterations={20}
-                animateOn="view"
-                revealDirection="start"
-                sequential
-                useOriginalCharsOnly={false}
-                className="revealed"
-              />
-            </span>
-            <span className="block gradient-text animate-fade-in-up opacity-0 delay-200">
-              <DecryptedText
-                text="Sojku"
-                speed={65}
-                maxIterations={20}
-                animateOn="view"
-                revealDirection="start"
-                sequential
-                useOriginalCharsOnly={false}
-                className="revealed"
-              />
-            </span>
-            <span className="block text-dark-400 text-4xl md:text-5xl lg:text-6xl mt-4 animate-fade-in-up opacity-0 delay-300">
-              <DecryptedText
-                text="Engineering Company."
-                speed={70}
-                maxIterations={20}
-                animateOn="view"
-                revealDirection="start"
-                sequential
-                useOriginalCharsOnly={false}
-                className="revealed"
-              />
-            </span>
-          </h1>
-
-          {/* Description */}
-          <p className="text-xl md:text-2xl text-dark-400 leading-relaxed max-w-2xl mb-12 animate-fade-in-up opacity-0 delay-400">
-            <DecryptedText
-              text="A pioneering software engineering company building innovative mobile apps, websites, and AI solutions that create sustainable impact across Africa."
-              speed={75}
-              maxIterations={15}
-              animateOn="view"
-              revealDirection="start"
-              sequential
-              useOriginalCharsOnly={false}
-              className="revealed"
-            />
+      {/* copy + scene */}
+      <div className="flex flex-wrap items-center justify-between" style={{ gap: 48, marginTop: 52 }}>
+        <div className="flex flex-col" style={{ gap: 32, maxWidth: 560, flex: '1 1 420px' }}>
+          <p style={{ margin: 0, fontSize: 21, lineHeight: 1.5, color: '#b8b3c4' }}>
+            Sojku is a senior team building websites, mobile apps, brand, motion and AI
+            automation — designed and shipped end-to-end for founders who care how it feels,
+            not just how it works.
           </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 animate-fade-in-up opacity-0 delay-500">
-            <a
-              href="#portfolio"
-              className="group relative overflow-hidden bg-gradient-to-r from-accent to-cyber text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 hover:scale-105"
-            >
-              <span className="relative z-10">View Projects</span>
-            </a>
+          <div className="flex flex-wrap" style={{ gap: 12 }}>
             <a
               href="#contact"
-              className="group px-8 py-4 rounded-full font-semibold border border-dark-700 text-dark-300 hover:border-accent hover:text-white transition-all duration-300"
+              className="btn-press"
+              style={{ background: '#a06bff', color: '#17131f', fontSize: 16, fontWeight: 700, padding: '16px 30px', borderRadius: 100 }}
             >
-              Start a Project
-              <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              Book a call →
+            </a>
+            <a
+              href="#work"
+              className="pill-ghost"
+              style={{ border: '1px solid #ece8f0', fontSize: 16, fontWeight: 700, padding: '16px 30px', borderRadius: 100 }}
+            >
+              Selected work
             </a>
           </div>
         </div>
+
+        <DeveloperScene />
       </div>
 
-      {/* Decorative line */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-700 to-transparent"></div>
+      {/* stat row */}
+      <div
+        className="grid grid-cols-2 md:grid-cols-4"
+        style={{ gap: 1, background: '#2c2833', border: '1px solid #2c2833', marginTop: 60 }}
+      >
+        {stats.map((s) => (
+          <div key={s.label} style={{ background: '#141117', padding: '26px 24px' }}>
+            <div style={{ fontFamily: display, fontSize: 44, fontWeight: 800, letterSpacing: '-0.03em' }}>{s.n}</div>
+            <div style={{ fontSize: 14, color: '#9b96a6', marginTop: 4 }}>{s.label}</div>
+          </div>
+        ))}
+        <div style={{ background: '#a06bff', color: '#17131f', padding: '26px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div style={{ fontSize: 15, lineHeight: 1.4, fontWeight: 500 }}>Web · Mobile · Design · Motion · AI</div>
+          <a href="#services" className="link-hover" style={{ fontWeight: 700, fontSize: 14, marginTop: 14, color: '#17131f' }}>What we do →</a>
+        </div>
+      </div>
     </section>
   )
 }
