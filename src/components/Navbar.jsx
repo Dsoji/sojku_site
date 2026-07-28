@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { CALENDLY_URL, openCalendly } from '../lib/calendly'
 
 export default function Navbar() {
   return (
@@ -45,7 +46,10 @@ export default function Navbar() {
           <a href="#services" className="pill-ghost" style={pill}>Services</a>
           <a href="#stack" className="pill-ghost" style={pill}>Stack</a>
           <a
-            href="#contact"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={openCalendly}
             className="btn-press"
             style={{ padding: '9px 17px', background: '#a06bff', color: '#17131f', borderRadius: 100 }}
           >

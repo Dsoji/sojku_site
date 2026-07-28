@@ -1,4 +1,5 @@
 import DeveloperScene from './DeveloperScene'
+import { CALENDLY_URL, openCalendly } from '../lib/calendly'
 
 const display = "'Bricolage Grotesque', sans-serif"
 
@@ -43,7 +44,10 @@ export default function HeroSection() {
           </p>
           <div className="flex flex-wrap" style={{ gap: 12 }}>
             <a
-              href="#contact"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={openCalendly}
               className="btn-press"
               style={{ background: '#a06bff', color: '#17131f', fontSize: 16, fontWeight: 700, padding: '16px 30px', borderRadius: 100 }}
             >
