@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SojkuMark from './SojkuMark'
 
 const display = "'Bricolage Grotesque', sans-serif"
 
@@ -13,8 +14,14 @@ export default function Footer() {
         style={{ maxWidth: 1360, padding: '56px clamp(20px,5vw,40px)', gap: 40 }}
       >
         <div style={{ maxWidth: 320 }}>
-          <div style={{ fontFamily: display, fontSize: 26, fontWeight: 800, letterSpacing: '-0.04em', marginBottom: 14 }}>
-            SOJKU<span style={{ color: '#a06bff' }}>°</span>
+          <div
+            className="flex items-center"
+            style={{ gap: 10, fontFamily: display, fontSize: 26, fontWeight: 800, letterSpacing: '-0.04em', marginBottom: 14 }}
+          >
+            <SojkuMark size={28} />
+            <span>
+              SOJKU<span style={{ color: '#a06bff' }}>°</span>
+            </span>
           </div>
           <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, color: '#9b96a6' }}>
             A software studio building websites, apps, brand, motion and AI automation.

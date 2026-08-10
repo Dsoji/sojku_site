@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CALENDLY_URL, openCalendly } from '../lib/calendly'
+import SojkuMark from './SojkuMark'
 
 export default function Navbar() {
   return (
@@ -20,7 +21,7 @@ export default function Navbar() {
           to="/"
           className="flex items-center"
           style={{
-            gap: 2,
+            gap: 10,
             fontFamily: "'Bricolage Grotesque', sans-serif",
             fontSize: 26,
             fontWeight: 800,
@@ -28,7 +29,10 @@ export default function Navbar() {
             color: '#ece8f0',
           }}
         >
-          SOJKU<span style={{ color: '#a06bff' }}>°</span>
+          <SojkuMark size={28} />
+          <span>
+            SOJKU<span style={{ color: '#a06bff' }}>°</span>
+          </span>
         </Link>
 
         <nav
